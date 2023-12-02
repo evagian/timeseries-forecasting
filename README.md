@@ -192,4 +192,20 @@ LGBMRegressor was the best performing model based on MSE for 2 out of the 3 vali
 This code is based on the following publicly available resources
 * [Nixtla Statistical, Machine Learning and Neural Forecasting methods](https://nixtla.github.io/statsforecast/docs/tutorials/statisticalneuralmethods.html)
 * [Intro to Forecasting with Darts](https://github.com/unit8co/darts/blob/master/examples/00-quickstart.ipynb)
-* [Store Item Demand Forecasting Challenge dataset from Kaggle](https://www.kaggle.com/competitions/demand-forecasting-kernels-only/data?select=train.csv) 
+* [Store Item Demand Forecasting Challenge dataset from Kaggle](https://www.kaggle.com/competitions/demand-forecasting-kernels-only/data?select=train.csv)
+
+# Part 2 - Multiple Timeseries Forecasting with Covariates - Cracking the Code 👩‍💻📈 Predicting Crypto Prices with Multiple TimeSeries and Covariates
+
+Use time series forecasting models with covariates ('Days Until Bitcoin Halving', 'Fear & Greed Index') to predict crypto prices (BTC, ETH, DOT, MATIC, SOL).
+
+Our objective is to employ the training series for forecasting cryptocurrency prices within the validation series, assess model accuracy through metrics, and determine the best-performing model for the task at hand.
+
+# Disclaimer
+
+This article is solely intended for educational purposes and does not constitute financial advice. It focuses on the development and evaluation of time series forecasting models with covariates using a simplified real-world example. The results obtained from this model should not be used for automated trading activities.
+
+# Sources
+
+* This article uses code examples from [Darts quickstart](https://unit8co.github.io/darts/quickstart/00-quickstart.html). You can refer to [Darts documentation](https://unit8co.github.io/darts/index.html) for more examples.
+* [Alternative.me Crypto Fear & Greed Index](https://alternative.me/crypto/fear-and-greed-index/)
+* [Bitcoin Halving: How It Works and Why It Matters](https://www.forbes.com/advisor/au/investing/cryptocurrency/bitcoin-halving/), by Matt Whittaker and Patrick McGimpsey in Forbes.com
