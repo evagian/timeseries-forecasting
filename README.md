@@ -207,8 +207,8 @@ This article is solely intended for educational purposes and does not constitute
 # What's New in Part 2?
 
 In part two we discuss how to: 
-* add covariates to your timeseries forecasting model
-* backvalidate the predictions of the models
+* **Add covariates** to your timeseries forecasting model
+* **Backvalidate model predictions**
 
 # Covariates: Leveraging External Data 
 
