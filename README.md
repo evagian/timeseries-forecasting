@@ -204,6 +204,47 @@ Our objective is to employ the training series for forecasting cryptocurrency pr
 
 This article is solely intended for educational purposes and does not constitute financial advice. It focuses on the development and evaluation of time series forecasting models with covariates using a simplified real-world example. The results obtained from this model should not be used for automated trading activities.
 
+# What's New in Part 2?
+
+In part two we discuss how to: 
+* add covariates to your timeseries forecasting model
+* backvalidate the predictions of the models
+
+# Covariates: Leveraging External Data 
+
+In addition to the target series (the series we aim to forecast), many models in Darts also accept covariate series as input. 
+
+**Covariates** are series that we don't intend to predict but can offer valuable supplementary information to the models. Both targets and covariates can be either multivariate or univariate.
+
+There are two types of covariate time series in Darts:
+
+* `past_covariates` consist of series that may not be known in advance of the forecast time. These can, for example, represent variables that need to be measured and aren't known ahead of time. Models don't use future values of past_covariates when making predictions.
+* `future_covariates` include series that are known in advance, up to the forecast horizon. These can encompass information like calendar data, holidays, weather forecasts, and more. Models capable of handling future_covariates consider future values (up to the forecast horizon) when making predictions.
+
+![covariates](https://unit8co.github.io/darts/_images/covariates-highlevel.png)
+
+Each covariate can potentially be multivariate. If you have multiple covariate series (e.g., month and year values), you should use `stack()` or `concatenate()` to combine them into a multivariate series.
+
+In the following cells, we use the `darts.utils.timeseries_generation.datetime_attribute_timeseries()` function to generate series containing month and year values. We then `concatenate()` these series along the "component" axis to create a covariate series with two components (month and year) for each target series. For simplicity, we directly scale the month and year values to a range of approximately 0 to 1.
+
+![image](https://github.com/evagian/timeseries-forecasting/assets/5917595/defda9f8-10c7-481d-b35c-42e47875552a)
+
+# Prediction Backvalidation 
+
+# Time Series Backvalidation
+
+The `historical_forecasts` feature in Darts assesses how a time series model would have performed in the past by generating and comparing predictions to actual data. Here's how it works:
+
+* **Model Training:** Train your time series forecasting model using historical data.
+* **Historical Forecasts:** Use the function to create step-by-step forecasts for a historical period preceding the training data.
+* **Comparison:** Compare historical forecasts to actual values from that period.
+* **Performance Evaluation:** Apply metrics like MSE, RMSE, or MAE for quantitative assessment.
+* **Insights and Refinement:** Analyze the results to gain insights and improve the model.
+
+This process is essential for validating a model's historical performance, testing different strategies, and building confidence in its accuracy before real-time use.
+
+![image](https://github.com/evagian/timeseries-forecasting/assets/5917595/29787c7e-ca05-4b6a-9d18-2b1425261577)
+
 # Sources
 
 * This article uses code examples from [Darts quickstart](https://unit8co.github.io/darts/quickstart/00-quickstart.html). You can refer to [Darts documentation](https://unit8co.github.io/darts/index.html) for more examples.
